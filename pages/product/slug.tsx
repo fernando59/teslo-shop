@@ -1,7 +1,8 @@
 import { Button, Chip, Grid, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import { ShopLayout } from "../../components/layouts"
-import { ProductSlideShow } from "../../components/products"
+import { ProductSizeSelector, ProductSlideShow } from "../../components/products"
+import { ItemCounter } from "../../components/ui"
 import { initialData } from "../../database/products"
 
 const product = initialData.products[0]
@@ -12,7 +13,7 @@ const Slug = () => {
             <Grid container spacing={3}>
                 {/* SlideShow */}
                 <Grid item xs={12} sm={7}>
-                    <ProductSlideShow images={product.images}/>
+                    <ProductSlideShow images={product.images} />
 
                 </Grid>
                 {/* DESCRIPTION */}
@@ -25,6 +26,8 @@ const Slug = () => {
                         <Box sx={{ my: 2 }}>
                             <Typography variant='subtitle2' >{product.inStock}</Typography>
                             {/* ItemCounter */}
+                            <ItemCounter/>
+                            <ProductSizeSelector  sizes={product.sizes}/>
 
                         </Box>
                         {/* Add to Cart */}
