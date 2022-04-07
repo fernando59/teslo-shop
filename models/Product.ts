@@ -23,7 +23,7 @@ const productSchema = new Schema({
 
 //TODO : Create index
 
-const Product:Model<IProduct> = mongoose.models.Product || model('product',productSchema)
+const Product:Model<IProduct> = mongoose.models.Product || model('Product',productSchema)
 
 
 export default Product
